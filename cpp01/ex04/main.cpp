@@ -8,6 +8,12 @@ void exit_with_error(const std::string &msg)
     exit(1);
 }
 
+void replace(std::string &str, size_t start, size_t length, const std::string &replace_with)
+{
+    std::string new_str = str.substr(0, start) + replace_with + str.substr(start + length);
+    str = new_str;
+}
+
 void replaceInFile(const std::string &filename, const std::string &to_replace, const std::string &replace_with)
 {
     std::ifstream ifs(filename.c_str());
@@ -25,7 +31,7 @@ void replaceInFile(const std::string &filename, const std::string &to_replace, c
     size_t pos = 0;
     while ((pos = file_contents.find(to_replace, pos)) != std::string::npos)
     {
-        file_contents.replace(pos, to_replace.length(), replace_with);
+        replace(file_contents, pos, to_replace.length(), replace_with);
         pos += replace_with.length();
     }
 
