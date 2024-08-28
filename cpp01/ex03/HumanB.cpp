@@ -4,6 +4,7 @@
 HumanB::HumanB(const std::string &name)
 {
     this->name = name;
+    weapon = NULL;
 }
 
 HumanB::~HumanB() {}
