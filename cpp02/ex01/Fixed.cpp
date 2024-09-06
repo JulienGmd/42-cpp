@@ -1,3 +1,4 @@
+#include <cmath>
 #include <iostream>
 #include "Fixed.h"
 
@@ -13,18 +14,6 @@ Fixed::Fixed(const Fixed &fixed)
     *this = fixed;
 }
 
-Fixed::Fixed(const int value)
-{
-    print("Int constructor called");
-    this->value = value << fractional_bits;
-}
-
-Fixed::Fixed(const float value)
-{
-    print("Float constructor called");
-    this->value = (int) (value * (1 << fractional_bits));
-}
-
 Fixed::~Fixed()
 {
     print("Destructor called");
@@ -37,12 +26,6 @@ Fixed &Fixed::operator=(const Fixed &fixed)
     return *this;
 }
 
-std::ostream &operator<<(std::ostream &os, const Fixed &obj)
-{
-    os << obj.toFloat();
-    return os;
-}
-
 int Fixed::getRawBits(void) const
 {
     return value;
@@ -53,9 +36,23 @@ void Fixed::setRawBits(const int raw)
     value = raw;
 }
 
-float Fixed::toFloat(void) const
+void Fixed::print(const std::string &msg) const
 {
-    return (float) value / (1 << fractional_bits);
+    std::cout << msg << std::endl;
+}
+
+// ----- ex01 ------------------------------------------------------------------
+
+Fixed::Fixed(const int value)
+{
+    print("Int constructor called");
+    this->value = value << fractional_bits;
+}
+
+Fixed::Fixed(const float value)
+{
+    print("Float constructor called");
+    this->value = (int) roundf(value * (1 << fractional_bits));
 }
 
 int Fixed::toInt(void) const
@@ -63,7 +60,15 @@ int Fixed::toInt(void) const
     return value >> fractional_bits;
 }
 
-void Fixed::print(const std::string &msg) const
+float Fixed::toFloat(void) const
 {
-    std::cout << msg << std::endl;
+    return (float) value / (1 << fractional_bits);
 }
+
+std::ostream &operator<<(std::ostream &os, const Fixed &obj)
+{
+    os << obj.toFloat();
+    return os;
+}
+
+// -----------------------------------------------------------------------------
