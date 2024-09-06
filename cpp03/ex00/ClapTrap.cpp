@@ -24,7 +24,7 @@ ClapTrap::ClapTrap(const ClapTrap &other)
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "ClapTrap destroyed" << std::endl;
+    std::cout << name << " destroyed" << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &other)
