@@ -8,6 +8,15 @@ Harl::Harl()
 
 Harl::~Harl() {}
 
+int Harl::get_log_level(const std::string &level)
+{
+    if (level == "DEBUG") return 0;
+    else if (level == "INFO") return 1;
+    else if (level == "WARNING") return 2;
+    else if (level == "ERROR") return 3;
+    else return -1;
+}
+
 void Harl::complain(std::string level)
 {
     void (Harl::* complaints[])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
@@ -65,13 +74,4 @@ void Harl::error()
             std::cout << "ERROR\n";
             break;
     }
-}
-
-int Harl::get_log_level(const std::string &level)
-{
-    if (level == "DEBUG") return 0;
-    else if (level == "INFO") return 1;
-    else if (level == "WARNING") return 2;
-    else if (level == "ERROR") return 3;
-    else return -1;
 }
