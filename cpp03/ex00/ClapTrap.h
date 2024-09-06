@@ -16,10 +16,11 @@ public:
     void beRepaired(unsigned int amount);
     bool isAlive();
     bool hasEnergy();
+    void printStats();
 
 private:
     std::string name;
     int health;
     int energy;
-    int attack_damage;
+    int attackDamage;
 };

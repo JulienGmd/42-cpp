@@ -2,7 +2,7 @@
 
 int main(void)
 {
-    ClapTrap claptrap("Claptrap");
+    ClapTrap claptrap("clap");
 
     claptrap.attack("Bandit");
     claptrap.takeDamage(5);
