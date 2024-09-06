@@ -2,15 +2,17 @@
 
 int main(void)
 {
-    ScavTrap claptrap("scav");
+    ScavTrap scavtrap("scav");
 
-    claptrap.attack("Bandit");
-    claptrap.takeDamage(50);
-    claptrap.beRepaired(50);
+    scavtrap.attack("Bandit");
+    scavtrap.takeDamage(50);
+    scavtrap.beRepaired(50);
 
-    claptrap.takeDamage(100);
-    claptrap.attack("Bandit");
-    claptrap.beRepaired(10);
+    scavtrap.takeDamage(100);
+    scavtrap.attack("Bandit");
+    scavtrap.beRepaired(10);
+
+    scavtrap.guardGate();
 
     return 0;
 }
