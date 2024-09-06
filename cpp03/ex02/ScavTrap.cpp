@@ -10,6 +10,12 @@ ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name)
     printStats();
 }
 
+ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)
+{
+    std::cout << "ScavTrap " << name << " created (copy)";
+    printStats();
+}
+
 ScavTrap::~ScavTrap()
 {
     std::cout << "ScavTrap " << name << " destroyed" << std::endl;

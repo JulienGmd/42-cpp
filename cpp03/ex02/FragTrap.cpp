@@ -10,6 +10,12 @@ FragTrap::FragTrap(const std::string &name) : ClapTrap(name)
     printStats();
 }
 
+FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other)
+{
+    std::cout << "FragTrap " << name << " created (copy)";
+    printStats();
+}
+
 FragTrap::~FragTrap()
 {
     std::cout << "FragTrap " << name << " destroyed" << std::endl;
