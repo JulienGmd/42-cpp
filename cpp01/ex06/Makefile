@@ -5,7 +5,7 @@ INC_DIR	=	.
 SRC_DIR	=	.
 OBJ_DIR	=	obj
 
-INC		=	$(wildcard *.hpp)
+INC		=	$(wildcard *.h) $(wildcard *.hpp)
 SRC		=	$(wildcard *.cpp)
 OBJ		=	$(SRC:%.cpp=$(OBJ_DIR)/%.o)
 
