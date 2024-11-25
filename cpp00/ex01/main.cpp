@@ -1,6 +1,7 @@
-#include "PhoneBook.hpp"
 #include "Contact.hpp"
+#include "PhoneBook.hpp"
 #include "utils.h"
+#include <iostream>
 
 int main()
 {
@@ -20,13 +21,13 @@ int main()
             Utils::Input(contact.phone_number, "Phone number: ");
             Utils::Input(contact.darkest_secret, "Darkest secret: ");
             phonebook.AddContact(contact);
-
-        } else if (option == "SEARCH")
-        {
+        }
+        else if (option == "SEARCH")
             phonebook.SearchContact();
-
-        } else if (option == "EXIT")
+        else if (option == "EXIT")
             break;
+        else
+            std::cout << "Invalid option\n";
     }
 
     return 0;

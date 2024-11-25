@@ -2,8 +2,9 @@
 
 #include <string>
 
-#define BLUE    "\033[1m\033[34m"
-#define RESET   "\033[0m"
+#define BLUE "\033[1m\033[34m"
+#define BWHITE "\033[0m\033[34m"
+#define RESET "\033[0m"
 
 namespace Utils
 {

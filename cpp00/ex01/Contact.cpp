@@ -1,7 +1,7 @@
-#include <iostream>
-#include <iomanip>
 #include "Contact.hpp"
 #include "utils.h"
+#include <iomanip>
+#include <iostream>
 
 void PrintColumn(const std::string &content);
 std::string Truncate(const std::string &basicString, size_t length);

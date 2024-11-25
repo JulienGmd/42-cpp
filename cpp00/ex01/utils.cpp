@@ -1,7 +1,8 @@
-#include <string>
-#include <sstream>
-#include <iostream>
 #include "utils.h"
+#include <cstdlib>
+#include <iostream>
+#include <sstream>
+#include <string>
 
 namespace Utils
 {
@@ -16,6 +17,8 @@ namespace Utils
     {
         std::cout << BLUE << prompt << RESET;
         std::getline(std::cin, field); // using `getline` because `cin` stops at the first whitespace
+        if (std::cin.eof())
+            exit(1);
     }
 
     void Input(int &field, const std::string &prompt)

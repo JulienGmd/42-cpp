@@ -1,7 +1,7 @@
-#include <ctime>
-#include <cstring>
-#include <iostream>
 #include "Account.hpp"
+#include <cstring>
+#include <ctime>
+#include <iostream>
 
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
@@ -105,7 +105,7 @@ void Account::displayStatus(void) const
 
 std::string getCurrentTimestamp()
 {
-//    return "19920104_091532"; // TODO
+    // return "19920104_091532"; // for perfect diff
     std::time_t now = std::time(NULL);
     std::tm *now_tm = std::gmtime(&now);
     char buf[16];
