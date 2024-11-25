@@ -22,6 +22,12 @@ public:
     void SetPhoneNumber(const std::string &phone_number);
     void SetDarkestSecret(const std::string &darkest_secret);
 
+    std::string GetFirstName() const;
+    std::string GetLastName() const;
+    std::string GetNickname() const;
+    std::string GetPhoneNumber() const;
+    std::string GetDarkestSecret() const;
+
     bool IsComplete() const;
     void Print() const;
     void PrintLine(int index) const;

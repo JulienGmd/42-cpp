@@ -35,6 +35,31 @@ void Contact::SetDarkestSecret(const std::string &darkest_secret)
     this->darkest_secret = darkest_secret;
 }
 
+std::string Contact::GetFirstName() const
+{
+    return first_name;
+}
+
+std::string Contact::GetLastName() const
+{
+    return last_name;
+}
+
+std::string Contact::GetNickname() const
+{
+    return nickname;
+}
+
+std::string Contact::GetPhoneNumber() const
+{
+    return phone_number;
+}
+
+std::string Contact::GetDarkestSecret() const
+{
+    return darkest_secret;
+}
+
 bool Contact::IsComplete() const
 {
     return !first_name.empty() &&
