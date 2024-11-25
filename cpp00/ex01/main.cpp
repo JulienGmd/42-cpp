@@ -15,11 +15,19 @@ int main()
         if (option == "ADD")
         {
             Contact contact;
-            Utils::Input(contact.first_name, "First name: ");
-            Utils::Input(contact.last_name, "Last name: ");
-            Utils::Input(contact.nickname, "Nickname: ");
-            Utils::Input(contact.phone_number, "Phone number: ");
-            Utils::Input(contact.darkest_secret, "Darkest secret: ");
+            std::string input;
+
+            Utils::Input(input, "First name: ");
+            contact.SetFirstName(input);
+            Utils::Input(input, "Last name: ");
+            contact.SetLastName(input);
+            Utils::Input(input, "Nickname: ");
+            contact.SetNickname(input);
+            Utils::Input(input, "Phone number: ");
+            contact.SetPhoneNumber(input);
+            Utils::Input(input, "Darkest secret: ");
+            contact.SetDarkestSecret(input);
+
             phonebook.AddContact(contact);
         }
         else if (option == "SEARCH")
