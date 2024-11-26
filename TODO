@@ -2,3 +2,20 @@
 leaks
 
 make re clean uniquement desfois
+
+canonical form
+
+Default constructor
+Copy constructor
+Destructor
+Copy assignment
+operator
+
+class A final
+{
+public:
+	A();
+	A(const A &a);
+	~A();
+	A &operator=(const A &a);
+};

@@ -16,6 +16,9 @@ void replace(std::string &str, size_t start, size_t length, const std::string &r
 
 void replaceInFile(const std::string &filename, const std::string &to_replace, const std::string &replace_with)
 {
+    if (to_replace.empty())
+        exit_with_error("to_replace cannot be empty");
+
     std::ifstream ifs(filename.c_str());
     if (!ifs.is_open())
         exit_with_error("could not open file " + filename);
@@ -41,6 +44,7 @@ void replaceInFile(const std::string &filename, const std::string &to_replace, c
     ofs.close();
 }
 
+// ./a.out Makefile "OBJ_DIR" "a"
 int main(int ac, char **av)
 {
     if (ac != 4)
