@@ -10,3 +10,7 @@
 !*.cpp
 !*.h
 !*.hpp
+
+# Ignore sub git repositories
+**/.git
+!.git

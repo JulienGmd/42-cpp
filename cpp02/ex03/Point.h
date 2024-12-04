@@ -1,20 +1,21 @@
 #pragma once
 
+#include "Fixed.h"
+
 class Point
 {
 public:
-    // Orthodox Canonical Form
     Point();
     Point(const Point &point);
     ~Point();
     Point &operator=(const Point &point);
-
-    Point(int x, int y);
-
-    int getX() const;
-    int getY() const;
+    Point(const float x, const float y);
 
 private:
-    int x;
-    int y;
+    Fixed const _x;
+    Fixed const _y;
+
+public:
+    Fixed getX() const;
+    Fixed getY() const;
 };

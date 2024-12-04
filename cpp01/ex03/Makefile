@@ -1,4 +1,4 @@
-NAME	=	a.out
+NAME	=	UnnecessaryViolence
 CXX		=	c++
 
 INC_DIR	=	.

@@ -1,18 +1,12 @@
 #include "Zombie.h"
+#include <cstdlib>
 
 int main(int ac, char **av)
 {
     int N = 3;
 
-    try
-    {
-        if (ac >= 2)
-            N = std::stoi(av[1]);
-    }
-    catch (const std::exception &e)
-    {
-        std::cerr << "Argument must be a number, using default value " << N << "\n";
-    }
+    if (ac >= 2)
+        N = std::atoi(av[1]);
 
     Zombie *horde = zombieHorde(N, "horde");
     for (int i = 0; i < N; i++)

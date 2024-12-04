@@ -1,39 +1,25 @@
 #include "Point.h"
 
-Point::Point()
-{
-    x = 0;
-    y = 0;
-}
+Point::Point() : _x(0), _y(0) {}
 
-Point::Point(const Point &point)
-{
-    *this = point; // Use the operator=
-}
+Point::Point(const Point &point) : _x(point._x), _y(point._y) {}
 
-Point::~Point()
-{
-}
+Point::~Point() {}
 
 Point &Point::operator=(const Point &point)
 {
-    x = point.x;
-    y = point.y;
+    (void)point;
     return *this;
 }
 
-Point::Point(int x, int y)
+Point::Point(const float x, const float y) : _x(x), _y(y) {}
+
+Fixed Point::getX() const
 {
-    this->x = x;
-    this->y = y;
+    return _x;
 }
 
-int Point::getX() const
+Fixed Point::getY() const
 {
-    return x;
-}
-
-int Point::getY() const
-{
-    return y;
+    return _y;
 }

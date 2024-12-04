@@ -10,12 +10,17 @@ int main(int ac, char **av)
 
     harl.complain("DEBUG");
     std::cout << std::endl;
+
     harl.complain("INFO");
     std::cout << std::endl;
+
     harl.complain("WARNING");
     std::cout << std::endl;
+
     harl.complain("ERROR");
     std::cout << std::endl;
+
+    harl.complain("nope");
     harl.complain("");
 
     return 0;

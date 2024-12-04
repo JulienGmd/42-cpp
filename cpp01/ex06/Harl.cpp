@@ -27,7 +27,7 @@ void Harl::complain(std::string level)
     int log_level = get_log_level(level);
     if (log_level == -1)
     {
-        std::cout << "Invalid level\n";
+        std::cout << "Invalid level" << std::endl;
         return;
     }
 
@@ -50,20 +50,20 @@ void Harl::complain(std::string level)
 
 void Harl::debug()
 {
-    std::cout << "DEBUG\n";
+    std::cout << "DEBUG" << std::endl;
 }
 
 void Harl::info()
 {
-    std::cout << "INFO\n";
+    std::cout << "INFO" << std::endl;
 }
 
 void Harl::warning()
 {
-    std::cout << "WARNING\n";
+    std::cout << "WARNING" << std::endl;
 }
 
 void Harl::error()
 {
-    std::cout << "ERROR\n";
+    std::cout << "ERROR" << std::endl;
 }

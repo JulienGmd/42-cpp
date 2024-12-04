@@ -1,15 +1,10 @@
-42 Headers
-leaks
+std::endl instead of '\n' ?
 
-make re clean uniquement desfois
-
-canonical form
-
-Default constructor
-Copy constructor
-Destructor
-Copy assignment
-operator
+A partir de cpp02: canonical form:
+- Default constructor
+- Copy constructor
+- Destructor
+- Copy assignment operator
 
 class A final
 {

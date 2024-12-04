@@ -1,4 +1,4 @@
-NAME	=	a.out
+NAME	=	Harl2_0
 CXX		=	c++
 
 INC_DIR	=	.
