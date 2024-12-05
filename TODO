@@ -1,16 +1,58 @@
-std::endl instead of '\n' ?
+// Canonical form
+// ----- Animal.h --------------------------------------------------------------
 
-A partir de cpp02: canonical form:
-- Default constructor
-- Copy constructor
-- Destructor
-- Copy assignment operator
+#pragma once
+#include "Animal.h"
 
-class A final
+class Dog : public Animal
 {
 public:
-	A();
-	A(const A &a);
-	~A();
-	A &operator=(const A &a);
+	Dog();
+	Dog(const Dog &other);
+	Dog &operator=(const Dog &other);
+	virtual ~Dog();
 };
+
+// ----- Animal.cpp ------------------------------------------------------------
+
+Animal::Animal()
+{
+	type = "";
+}
+
+Animal::Animal(const Animal &other)
+{
+	*this = other;
+}
+
+Animal &Animal::operator=(const Animal &other)
+{
+	if (this == &other)
+		return *this;
+	type = other.type;
+	return *this;
+}
+
+Animal::~Animal() {}
+
+// ----- Dog.cpp ---------------------------------------------------------------
+
+Dog::Dog() : Animal()
+{
+	type = "Dog";
+}
+
+Dog::Dog(const Dog &other) : Animal(other)
+{
+	*this = other;
+}
+
+Dog &Dog::operator=(const Dog &other)
+{
+	if (this == &other)
+		return *this;
+	Animal::operator=(other);
+	return *this;
+}
+
+Dog::~Dog() {}

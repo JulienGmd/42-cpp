@@ -1,5 +1,5 @@
-#include <iostream>
 #include "FragTrap.h"
+#include <iostream>
 
 FragTrap::FragTrap(const std::string &name) : ClapTrap(name)
 {
@@ -12,6 +12,7 @@ FragTrap::FragTrap(const std::string &name) : ClapTrap(name)
 
 FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other)
 {
+    *this = other;
     std::cout << "FragTrap " << name << " created (copy)";
     printStats();
 }
@@ -19,6 +20,14 @@ FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other)
 FragTrap::~FragTrap()
 {
     std::cout << "FragTrap " << name << " destroyed" << std::endl;
+}
+
+FragTrap &FragTrap::operator=(const FragTrap &other)
+{
+    if (this == &other)
+        return *this;
+    ClapTrap::operator=(other);
+    return *this;
 }
 
 void FragTrap::highFivesGuys()

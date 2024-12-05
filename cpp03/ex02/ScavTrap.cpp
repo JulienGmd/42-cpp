@@ -1,5 +1,5 @@
-#include <iostream>
 #include "ScavTrap.h"
+#include <iostream>
 
 ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name)
 {
@@ -12,6 +12,7 @@ ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name)
 
 ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)
 {
+    *this = other;
     std::cout << "ScavTrap " << name << " created (copy)";
     printStats();
 }
@@ -19,6 +20,14 @@ ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)
 ScavTrap::~ScavTrap()
 {
     std::cout << "ScavTrap " << name << " destroyed" << std::endl;
+}
+
+ScavTrap &ScavTrap::operator=(const ScavTrap &other)
+{
+    if (this == &other)
+        return *this;
+    ClapTrap::operator=(other);
+    return *this;
 }
 
 void ScavTrap::guardGate()

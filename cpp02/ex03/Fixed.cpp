@@ -1,6 +1,6 @@
+#include "Fixed.h"
 #include <cmath>
 #include <iostream>
-#include "Fixed.h"
 
 Fixed::Fixed()
 {
@@ -18,6 +18,8 @@ Fixed::~Fixed()
 
 Fixed &Fixed::operator=(const Fixed &fixed)
 {
+    if (this == &fixed)
+        return *this;
     value = fixed.value;
     return *this;
 }
@@ -46,7 +48,7 @@ Fixed::Fixed(const int value)
 
 Fixed::Fixed(const float value)
 {
-    this->value = (int) roundf(value * (1 << fractional_bits));
+    this->value = (int)roundf(value * (1 << fractional_bits));
 }
 
 int Fixed::toInt(void) const
@@ -56,7 +58,7 @@ int Fixed::toInt(void) const
 
 float Fixed::toFloat(void) const
 {
-    return (float) value / (1 << fractional_bits);
+    return (float)value / (1 << fractional_bits);
 }
 
 std::ostream &operator<<(std::ostream &os, const Fixed &obj)

@@ -1,5 +1,5 @@
-#include <iostream>
 #include "Fixed.h"
+#include <iostream>
 
 Fixed::Fixed()
 {
@@ -21,6 +21,8 @@ Fixed::~Fixed()
 Fixed &Fixed::operator=(const Fixed &fixed)
 {
     print("Copy assignment operator called");
+    if (this == &fixed)
+        return *this;
     value = fixed.getRawBits();
     return *this;
 }

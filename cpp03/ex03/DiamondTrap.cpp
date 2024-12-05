@@ -1,8 +1,8 @@
-#include <iostream>
 #include "DiamondTrap.h"
+#include <iostream>
 
 DiamondTrap::DiamondTrap(const std::string &name)
-        : ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name)
+    : ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name)
 {
     this->name = name;
     health = FragTrap::health;
@@ -13,9 +13,9 @@ DiamondTrap::DiamondTrap(const std::string &name)
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &other)
-        : ClapTrap(other), FragTrap(other), ScavTrap(other)
+    : ClapTrap(other), FragTrap(other), ScavTrap(other)
 {
-    name = other.name;
+    *this = other;
     std::cout << "DiamondTrap " << name << " created (copy)";
     ScavTrap::printStats();
 }
@@ -23,6 +23,15 @@ DiamondTrap::DiamondTrap(const DiamondTrap &other)
 DiamondTrap::~DiamondTrap()
 {
     std::cout << "DiamondTrap " << name << " destroyed" << std::endl;
+}
+
+DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other)
+{
+    if (this == &other)
+        return *this;
+    name = other.name;
+    ClapTrap::operator=(other);
+    return *this;
 }
 
 DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other)
@@ -41,5 +50,4 @@ void DiamondTrap::whoAmI()
 {
     std::cout << "I am " << name << " and my ClapTrap name is "
               << ClapTrap::name << std::endl;
-
 }
