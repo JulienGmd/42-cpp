@@ -1,6 +1,16 @@
 #include <iostream>
 #include "ClapTrap.h"
 
+ClapTrap::ClapTrap()
+{
+    name = "default";
+    health = 10;
+    energy = 10;
+    attackDamage = 0;
+    std::cout << "ClapTrap " << name << " created";
+    printStats();
+}
+
 ClapTrap::ClapTrap(const std::string &name)
 {
     this->name = name;
@@ -77,8 +87,8 @@ bool ClapTrap::hasEnergy()
 void ClapTrap::printStats()
 {
     std::cout << " ("
-              << "\033[0;31m" << "health: " << health
-              << "\033[0;33m" << " energy: " << energy
-              << "\033[0;35m" << " attack_damage: " << attackDamage
+              << "\033[0;31m" << health
+              << "\033[0;33m " << energy
+              << "\033[0;36m " << attackDamage
               << "\033[0m" << ")" << std::endl;
 }

@@ -1,6 +1,15 @@
 #include "FragTrap.h"
 #include <iostream>
 
+FragTrap::FragTrap() : ClapTrap()
+{
+    health = 100;
+    energy = 100;
+    attackDamage = 30;
+    std::cout << "FragTrap " << name << " created";
+    printStats();
+}
+
 FragTrap::FragTrap(const std::string &name) : ClapTrap(name)
 {
     health = 100;

@@ -1,3 +1,10 @@
+// Ajouter des default constructor sur toute les classes qui n'en ont pas
+
+// Assignement in copy constructor drawbacks:
+// https://stackoverflow.com/questions/1457842/is-this-good-code-copy-constructor-and-assignment-operator
+// (voir les liens dans This question already has answers here, a noter que le
+//  assignment operator n'utilise pas `const Class& other`, est-ce important?)
+
 // Canonical form
 // ----- Animal.h --------------------------------------------------------------
 
