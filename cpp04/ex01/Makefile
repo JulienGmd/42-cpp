@@ -20,8 +20,8 @@ ifeq ($(DEBUG), 1)
 CFLAGS	+= -fsanitize=address -g3
 LFLAGS	+= -fsanitize=address -g3
 else
-CFLAGS	+= -O3
-LFLAGS	+= -O3
+CFLAGS	+= #-O3
+LFLAGS	+= #-O3
 endif
 
 

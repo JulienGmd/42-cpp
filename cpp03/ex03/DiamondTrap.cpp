@@ -3,11 +3,14 @@
 
 DiamondTrap::DiamondTrap() : ClapTrap("default_clap_name"), FragTrap(), ScavTrap()
 {
-    // TODO Marche pas car les 3 attackDamage ont la meme valeur (celle de ScavTrap)
     name = "default";
-    health = FragTrap::health;
-    energy = ScavTrap::energy;
-    attackDamage = FragTrap::attackDamage;
+    // Note: baseClass::var doesn't work for some reason.
+    // health = FragTrap::health;
+    // energy = ScavTrap::energy;
+    // attackDamage = FragTrap::attackDamage;
+    health = 100;
+    energy = 50;
+    attackDamage = 30;
     std::cout << "DiamondTrap " << name << " created";
     ScavTrap::printStats();
 }
@@ -15,15 +18,14 @@ DiamondTrap::DiamondTrap() : ClapTrap("default_clap_name"), FragTrap(), ScavTrap
 DiamondTrap::DiamondTrap(const std::string &name)
     : ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name)
 {
-    // TODO Marche pas car les 3 attackDamage ont la meme valeur (celle de ScavTrap)
-    std::cout << "Claptrap attackDamage: " << ClapTrap::attackDamage << std::endl;
-    std::cout << "Fragtrap attackDamage: " << FragTrap::attackDamage << std::endl;
-    std::cout << "Scavtrap attackDamage: " << ScavTrap::attackDamage << std::endl;
-
     this->name = name;
-    health = FragTrap::health;
-    energy = ScavTrap::energy;
-    attackDamage = FragTrap::attackDamage;
+    // Note: baseClass::var doesn't work for some reason.
+    // health = FragTrap::health;
+    // energy = ScavTrap::energy;
+    // attackDamage = FragTrap::attackDamage;
+    health = 100;
+    energy = 50;
+    attackDamage = 30;
     std::cout << "DiamondTrap " << name << " created";
     ScavTrap::printStats();
 }
